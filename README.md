@@ -1,10 +1,10 @@
-##Objective:
-<h2>Predict taxi fares in New York City using BigQuery ML.</h2>
+## Objective:
+<p>Predict taxi fares in New York City using BigQuery ML.</p>
 
-<h2>Build a predictive model based on historical NYC taxi trip data.</h2>
+<p>Build a predictive model based on historical NYC taxi trip data.</p>
 
-<h2>Use key features like time of day, pickup and dropoff locations, and passenger count.</h2>
+<p>Use key features like time of day, pickup and dropoff locations, and passenger count.<p>
 
-<h2>Improve fare prediction accuracy through data preprocessing and model tuning.</h2>
+<p>Improve fare prediction accuracy through data preprocessing and model tuning.<p>
 
-<h2>Provide a foundation for more complex systems such as dynamic pricing, route optimization, and real-time fare prediction for ride-hailing services.</h2>
+<p>Provide a foundation for more complex systems such as dynamic pricing, route optimization, and real-time fare prediction for ride-hailing services.</p>
