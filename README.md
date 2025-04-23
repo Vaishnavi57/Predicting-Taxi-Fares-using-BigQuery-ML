@@ -18,7 +18,7 @@
 - The dataset used for this project is the **NYC Yellow Taxi Trip Data**, which contains detailed information about taxi rides in New York City. The dataset is available publicly through **Google Cloud's BigQuery Public Datasets** and can be accessed directly within BigQuery.
 - (https://console.cloud.google.com/bigquery?p=bigquery-public-data&d=nyc_tlc&t=yellow_tripdata&page=table)
 
-## 🔧 **Step 1: Explore NYC Taxi Cab Data**
+##  **Step 1: Explore NYC Taxi Cab Data**
 
 In this step, you will query the NYC Yellow Taxi dataset to find out how many trips Yellow taxis took each month in 2015.
 
@@ -36,7 +36,7 @@ ORDER BY
   month
 ```
 
-## 🔧 **Step 2: Calculate the Average Speed of Yellow Taxi Trips in 2015**
+##  **Step 2: Calculate the Average Speed of Yellow Taxi Trips in 2015**
 
 In this step, we will calculate the average speed of Yellow taxi trips in 2015. The average speed is calculated using the trip distance and the time difference between pickup and dropoff.
 
@@ -59,7 +59,7 @@ In this step, we will calculate the average speed of Yellow taxi trips in 2015. 
    ORDER BY
      hour
 ```
-## 🔧 **Step 3: Select Features and Create Your Training Dataset**
+##  **Step 3: Select Features and Create Your Training Dataset**
 
 In this step, we will select useful features from the **NYC Yellow Taxi Dataset** and create a training dataset to forecast taxi fares. The selected features will help the machine learning model understand the relationship between historical cab ride data and fare prices.
 
@@ -109,7 +109,7 @@ In this step, we will select useful features from the **NYC Yellow Taxi Dataset*
 - **Grouping and Transformation**:
    - `EXTRACT` is used to extract the day of the week and hour of the day from the `pickup_datetime`.
    - 
-## 🔧 **Creating a BigQuery Dataset to Store Models**
+##  **Step 4: Creating a BigQuery Dataset to Store Models**
 
 A **BigQuery dataset** named **`taxi`** was created to store the machine learning models for the taxi fare prediction project. This dataset will be used to store models and other relevant outputs throughout the project.
 
@@ -155,7 +155,7 @@ taxitrips AS (
 SELECT *
 FROM taxitrips
 ```
-## **Evaluating Model Performance**
+## **Step 5: Evaluating Model Performance**
 
 After training the `taxifare_model`, the next step involved evaluating its performance on unseen data to determine how well it generalizes. The evaluation focused on the **Root Mean Squared Error (RMSE)**, a commonly used metric for regression tasks that indicates how far predictions deviate from actual values.
 
@@ -198,7 +198,7 @@ FROM
     SELECT * FROM taxitrips
   ))
 
-## 🔮 **Predicting Taxi Fare Amounts**
+##  **Predicting Taxi Fare Amounts**
 
 With the model trained and evaluated, the final step involved generating fare predictions using the **`taxifare_model`**. Predictions were made on evaluation data that was not used during training, ensuring unbiased results.
 
@@ -241,7 +241,7 @@ FROM
     SELECT * FROM taxitrips
   ))
 ```
-##  **Improving the Model with Feature Engineering**
+##  **Step 5: Improving the Model with Feature Engineering**
 
 Machine learning model development is an iterative process. After evaluating the performance of the initial model, steps were taken to refine the input data by applying **feature engineering** and **row-level filtering**. The goal was to improve model accuracy by reducing noise and focusing on more consistent and reliable data points.
 
@@ -270,7 +270,7 @@ WHERE
   AND dropoff_latitude > 40
   AND dropoff_latitude < 42
 ```
-##  **Retraining the Model with Refined Features**
+##  **Step 6: Retraining the Model with Refined Features**
 
 Following the initial evaluation and data refinement, the model was retrained using an updated dataset and enhanced feature set. The new model, **`taxi.taxifare_model_2`**, aims to improve prediction accuracy by incorporating calculated features such as **Euclidean distance** between pickup and drop-off locations.
 
@@ -317,7 +317,7 @@ taxitrips AS (
 
 SELECT * FROM taxitrips
 ```
-## **Evaluating the Improved Model**
+## **Step 7: Evaluating the Improved Model**
 
 After retraining the model using refined features and filtered data, the updated model `taxifare_model_2` was evaluated to measure performance improvements. As with the previous model, **Root Mean Squared Error (RMSE)** was used to assess prediction accuracy.
 
